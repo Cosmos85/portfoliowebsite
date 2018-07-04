@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -22,15 +23,15 @@
 
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Esa Kesti</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Esa Kesti</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link" href="#">Linkedin</a>
-            <a class="nav-item nav-link" href="#">Resume</a>
-            <a class="nav-item nav-link" href="#">Blog</a>
+            <a class="nav-item nav-link" href="https://www.linkedin.com/in/esakesti/">Linkedin</a>
+            <a class="nav-item nav-link" href="{% static 'esa.pdf' %}">Resume</a>
+            <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
           </div>
         </div>
       </nav>
@@ -45,6 +46,7 @@
           <p>
             <a href="mailto:esakesti@gmail.com" class="btn btn-primary my-2">Email Me</a>
           </p>
+          <img src="{% static 'esa.jpg' %}" height="300" />
         </div>
       </section>
 
@@ -58,7 +60,7 @@
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" src="{{ job.image.url }}">
                 <div class="card-body">
-                  <p class="card-text">{{ job.summary }}</p>
+                  <p class="card-text">{{job.summary}}</p>
 
                   </div>
                 </div>
